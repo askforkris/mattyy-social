@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2>Edit Profile</h2>
+  <form method="POST" enctype="multipart/form-data">
+    <label>Display Name:</label><br>
+    <input type="text" name="display_name" value="{{ user.display_name }}"><br><br>
+
+    <label>Bio:</label><br>
+    <textarea name="bio" rows="5" cols="30">{{ user.bio }}</textarea><br><br>
+
+    <label>Profile Picture:</label><br>
+    <input type="file" name="profile_pic"><br><br>
+
+    <button type="submit">Save</button>
+  </form>
+{% endblock %}

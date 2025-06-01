@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2>{{ user.display_name }}</h2>
+  <img src="{{ url_for('static', filename='profile_pics/' + user.profile_pic) }}" width="100">
+  <p>{{ user.bio }}</p>
+  <div class="follower-box">
+    <form method="GET" action="{{ url_for('follow' if current_user not in user.followers else 'unfollow', user_id=user.id) }}">
+      <button type="submit">
+        {% if current_user in user.followers %}
+          Unfollow
+        {% else %}
+          Follow
+        {% endif %}
+      </button>
+    </form>
+  </div>
+  <h3>{{ user.display_name }}'s Posts</h3>
+  {% for post in posts %}
+    <div class="post-card">
+      {{ post.content }}
+    </div>
+  {% endfor %}
+{% endblock %}
