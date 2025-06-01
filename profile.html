@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2>{{ user.display_name }}'s Profile</h2>
+  <img src="{{ url_for('static', filename='profile_pics/' + user.profile_pic) }}" width="100">
+  <p>{{ user.bio }}</p>
+  <a href="{{ url_for('edit_profile') }}">Edit Profile</a>
+  <h3>Your Posts</h3>
+  {% for post in posts %}
+    <div class="post-card">
+      {{ post.content }}
+    </div>
+  {% endfor %}
+{% endblock %}
