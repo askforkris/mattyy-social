@@ -4,3 +4,4 @@ flask-login
 flask-socketio
 eventlet
 flask-dance
+gunicorn
