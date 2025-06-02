@@ -10,6 +10,7 @@ import os
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
 app = Flask(__name__)
+
 app.config['SECRET_KEY'] = 'your-secret-key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 
@@ -129,8 +130,6 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for("home"))
-
-
-
+    
 if __name__ == '__main__':
-    socketio.run(app, host="0.0.0.0", port=5050, debug=True)
+    socketio.run(app)
