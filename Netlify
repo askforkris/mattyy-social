@@ -1,0 +1,6 @@
+[build]
+  command = "python main.py" # Or your real build command
+  publish = "static"         # Directory for HTML/CSS output, change if needed
+
+[functions]
+  directory = "netlify/functions"
