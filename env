@@ -1,0 +1,12 @@
+# === Flask Settings ===
+SECRET_KEY=your-secret-key
+
+# === Database Settings ===
+SQLALCHEMY_DATABASE_URI=sqlite:///site.db
+
+# === Google OAuth ===
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+
+# === API Key for Route Protection ===
+TURN_API_KEY=your-turnegg-api-key
